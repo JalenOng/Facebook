@@ -1,0 +1,10 @@
+
+  <h1>Welcome to Your Crazy Blog!</h1>
+
+
+
+  <% @post.each do |c| %>
+  <a href="/posts/<%= c.id %>">
+  <p><%= c.title %></p>
+  </a>
+  <% end %>

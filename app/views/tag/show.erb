@@ -1,0 +1,8 @@
+<h1><%= @tag.name %></h1>
+
+Posts:
+
+<% @tag.posts.each do |p| %>
+<p><%= p.title %><p>
+
+<% end %>
