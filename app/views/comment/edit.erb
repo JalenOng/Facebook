@@ -1,0 +1,17 @@
+<h1>Edit Comment</h1>
+
+<form action="/comment/<%= @comment.id %>" method="POST">
+<input type="hidden" name="_method" value="PUT">
+<label>Comment</label>
+<input type="text" name="body" value="<%= @comment.body %>">
+<br />
+<br />
+
+<br />
+<input type="submit" value="Edit my awesome comment">
+</form>
+
+<form action="/comment/<%= @comment.id %>/delete" method="POST">
+<input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+  </form>

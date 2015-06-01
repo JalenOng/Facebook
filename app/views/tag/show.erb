@@ -1,8 +1,17 @@
-<h1><%= @tag.name %></h1>
 
-Posts:
+<h1><%= @tags.name %></h1>
 
-<% @tag.posts.each do |p| %>
-<p><%= p.title %><p>
+Status:
+
+
+<% @tags.statuses.each do |t| %>
+ 
+<p><%= t.body %><p>
 
 <% end %>
+  
+
+
+
+
+

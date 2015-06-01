@@ -1,0 +1,33 @@
+
+  <h1>Welcome to Facebook!</h1>
+
+  <a href="/status/new">New Status</a>
+ 
+
+  <% @status.each do |s| %>
+  <a href="/status/<%= s.id %>/edit">
+  <p><%= s.body %></p></a>
+  
+  <a href="/status/<%= s.id %>/likes"><p>Like me</p></a>
+  <% @count = s.likes.count %>
+  Total likes: <%= @count %>
+
+ Tags:
+<% s.tags.each do |t| %>
+<%= t.name %>,
+<% end %>
+  
+
+
+  <p>comments:</p>
+  <% s.comments.each do |c| %>
+  <a href="/comment/<%= c.id %>/edit">
+  <p><%= c.body %></p></a>
+   <% end %>
+
+  <p><a href="/<%= s.id %>/comments/new">New Comment</a></p>
+
+  <hr >
+ 
+  <% end %>
+

@@ -1,6 +1,8 @@
 get '/tag/:name' do
-@tag = Tag.find_by(name: params[:name])
+@tags = Tag.find_by(name: params[:name])
 
+# @tags = Tag.where(name: params[:name])
+# redirect_error("/", "Tag not found.") if @tags.empty?
 
 erb :"/tag/show"
 
