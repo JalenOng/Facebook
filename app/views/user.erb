@@ -3,29 +3,31 @@
 
   <a href="/status/new">New Status</a>
  
+ <hr >
 
-  <% @status.each do |s| %>
-  <a href="/status/<%= s.id %>/edit">
-  <p><%= s.body %></p></a>
+  <% @status.each do |status| %>
+  <a href="/status/<%= status.id %>/edit">
+  <p><%= status.body %></p></a> 
+  Commented by: <%= status.user.try(:username) %>
   
-  <a href="/status/<%= s.id %>/likes"><p>Like me</p></a>
-  <% @count = s.likes.count %>
-  Total likes: <%= @count %>
+  <a href="/status/<%= status.id %>/likes"><p>Like me</p></a>
+ <% @count = status.likes.count %>
+  Total likes: <%= @count %> 
 
- Tags:
-<% s.tags.each do |t| %>
+ Tags#
+<% status.tags.each do |t| %>
 <%= t.name %>,
 <% end %>
   
 
 
   <p>comments:</p>
-  <% s.comments.each do |c| %>
+  <% status.comments.each do |c| %>
   <a href="/comment/<%= c.id %>/edit">
   <p><%= c.body %></p></a>
    <% end %>
 
-  <p><a href="/<%= s.id %>/comments/new">New Comment</a></p>
+  <p><a href="/<%= status.id %>/comments/new">New Comment</a></p>
 
   <hr >
  

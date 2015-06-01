@@ -62,17 +62,13 @@ end
 
 get '/user/:user_id' do
 
-
-@status = Status.where(user_id: session[:user_id])
-  # Look in app/views/index.erb
-
-
-  #show likes to status
-  #link to create new status
-
-
-
-  erb :user
+  if session[:user_id] == nil
+    redirect to "/"
+  else
+    @status = Status.all
+     erb :user
+  end
+ 
 end
 
 

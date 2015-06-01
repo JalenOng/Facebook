@@ -1,8 +1,8 @@
 
 
 get '/status/:status_id/likes' do
- @status = Status.where(user_id: session[:user_id])
-  @user = User.find(session[:user_id])
+ @user = User.find(session[:user_id])
+ @status = Status.all
   @like = Like.create(status_id: params[:status_id], user_id: @user.id)
 
 
@@ -27,10 +27,6 @@ end
 # erb :"status/new"
 # end
 # end
-
-
-
-
 
 
 # #show
